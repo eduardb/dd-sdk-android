@@ -46,7 +46,7 @@ object Dependencies {
         const val KtLint = "8.2.0"
         const val Dokka = "0.10.0"
         const val Bintray = "1.8.4"
-        const val Unmock = "0.7.5"
+        const val Unmock = "0.7.6"
         const val Robolectric = "4.4_r1-robolectric-r2" // Use lowest API
 
         // AndroidJunit
@@ -199,7 +199,7 @@ object Dependencies {
             "androidx.benchmark:benchmark-gradle-plugin:${Versions.JetpackBenchmark}"
         const val Dokka = "org.jetbrains.dokka:dokka-gradle-plugin:${Versions.Dokka}"
         const val Bintray = "com.jfrog.bintray.gradle:gradle-bintray-plugin:${Versions.Bintray}"
-        const val Unmock = "de.mobilej.unmock:UnMockPlugin:${Versions.Unmock}"
+        const val Unmock = "com.github.bjoernq:unmockplugin:${Versions.Unmock}"
         const val Realm = "io.realm:realm-gradle-plugin:${Versions.Realm}"
         const val SQLDelight = "com.squareup.sqldelight:gradle-plugin:${Versions.SQLDelight}"
     }

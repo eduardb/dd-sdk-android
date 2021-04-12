@@ -37,7 +37,6 @@ plugins {
     id("transitiveDependencies")
     id("org.jetbrains.dokka")
     id("com.jfrog.bintray")
-    id("de.mobilej.unmock")
     jacoco
 }
 
@@ -133,21 +132,12 @@ dependencies {
     testImplementation(Dependencies.Libraries.JUnit5)
     testImplementation(Dependencies.Libraries.TestTools)
     testImplementation(Dependencies.Libraries.OkHttpMock)
-    unmock(Dependencies.Libraries.Robolectric)
 
     // Static Analysis
     detekt(project(":tools:detekt"))
     detekt(Dependencies.Libraries.DetektCli)
 }
 
-unMock {
-    keep("android.os.BaseBundle")
-    keep("android.os.Bundle")
-    keep("android.os.Parcel")
-    keepStartingWith("com.android.internal.util.")
-    keepStartingWith("android.util.")
-    keep("android.content.ComponentName")
-}
 
 apply(from = "clone_dd_trace.gradle.kts")
 apply(from = "clone_rum_schema.gradle.kts")
