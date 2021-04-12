@@ -107,7 +107,12 @@ fun Project.publishingConfig(projectDescription: String) {
         signingExtension.apply {
             val privateKey = System.getenv("GPG_PRIVATE_KEY")
             val password = System.getenv("GPG_PASSWORD")
-            isRequired = true
+            setRequired {
+                val taskRequests = gradle.startParameter.taskRequests
+                return@setRequired !(taskRequests.size == 1
+                    && taskRequests[0].args.size == 1
+                    && taskRequests[0].args[0] == "publishToMavenLocal")
+            }
             useInMemoryPgpKeys(privateKey, password)
             sign(publishingExtension.publications.getByName(MavenConfig.PUBLICATION))
         }
