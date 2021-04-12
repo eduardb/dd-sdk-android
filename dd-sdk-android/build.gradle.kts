@@ -54,20 +54,20 @@ android {
         versionCode = AndroidConfig.VERSION.code
         versionName = AndroidConfig.VERSION.name
     }
-
-    sourceSets.named("main") {
-        java.srcDir("src/main/kotlin")
-    }
-    sourceSets.named("test") {
-        java.srcDir("src/test/kotlin")
-    }
-    sourceSets.named("androidTest") {
-        java.srcDir("src/androidTest/kotlin")
-    }
+    //
+    // sourceSets.named("main") {
+    //     java.srcDir("src/main/kotlin")
+    // }
+    // sourceSets.named("test") {
+    //     java.srcDir("src/test/kotlin")
+    // }
+    // sourceSets.named("androidTest") {
+    //     java.srcDir("src/androidTest/kotlin")
+    // }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        setSourceCompatibility(JavaVersion.VERSION_1_8)
+        setTargetCompatibility(JavaVersion.VERSION_1_8)
     }
 
     testOptions {
@@ -102,8 +102,8 @@ android {
         isWarningsAsErrors = true
         isAbortOnError = true
         isCheckReleaseBuilds = false
-        isCheckGeneratedSources = true
-        isIgnoreTestSources = true
+        setCheckGeneratedSources(true)
+        setIgnoreTestSources(true)
     }
 }
 
